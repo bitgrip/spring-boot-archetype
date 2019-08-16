@@ -1,5 +1,5 @@
 <archetype name="${artifactId}">
-  <id>service-archetype</id>
+  <id>spring-boot-service</id>
   <modules>
     <module id="api" dir="api" name="api">
       <fileSets>
