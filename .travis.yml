@@ -1,0 +1,18 @@
+sudo: false
+install: true
+
+language: java
+
+addons:
+  sonarcloud:
+    organization: "bitgrip"
+    token:
+      secure: "eEqVOWQrUzFarO+BC37EjX/bAiwV4Wy8gOyr2h/hupKNSVD7EbbEHdL4Kx0mxyVSJzi9jl/jr7H27UbBn/5+mwe+GPr7uiTYaYKsvInxevJL+Yj9VmyOHfuWjCf8dCDH0fhfxw1QAA5pxac46TGtC9/B+t752aLE9nOVwjJqTBv6prqmjMoks8vAriV/CAnQ29YRq+iFSzGLWpqXO3J13G+d0ome6AiOLpV9HZafV5C8JIYNKwoC2n5kzJjGGyQSZ+y5yCBYKqrT7MwYLDjTwu52sDx0XfKZIJ52dj6gs5Q3REVb0/PaS/Ta8NKQW1xaaLpoKkDBVvaoAqhKFSipGpZh3/JkuIYtxUXIi9sdcKyxfZdN7xQFWha+dj1pQWS2mCm2P8t8ElwPnjKbGWZsDkZMQi9kqvvLC/o+QmZmZLa5SYmqsuBB6pp6TTGcNtrb9NxdU/+HfZeHsYp/x3u6Lp+l/G2SCFnJL+ZF09HVOXGQIrsFFSoHNML9zMomw0Pntn4xCZDi/1c1/0MQD+IOzWqX5fbNeKeowsoorErg6/F/HOUQy5f363frtcxTVH4QHhFiyrJ9EwEw/mFwFUOxCEWFeD+ton7ayleeAtOGMgTySXbFOlnfN1ggQE1oMyR8yH5IOPZtc1u/2lG2eO7TE0bA4wq1of/+SBFP2mEZ2Dg="
+
+script:
+  - mvn clean verify sonar:sonar -Pcoverage -B
+
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+    - '$HOME/.sonar/cache'
