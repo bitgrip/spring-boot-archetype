@@ -1,3 +1,4 @@
+# Maven
 target/
 pom.xml.tag
 pom.xml.releaseBackup
@@ -6,7 +7,27 @@ pom.xml.next
 release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
-.mvn/timing.properties
+# exclude jar for maven wrapper
+!.mvn/wrapper/maven-wrapper.jar
 
-# Avoid ignoring Maven wrapper jar file (.jar files are usually ignored)
-!/.mvn/wrapper/maven-wrapper.jar
+# IntelliJ files
+**/*.iml
+**/.idea
+
+# Eclipse files
+.classpath
+.project
+.Settings/
+.settings
+
+# OS generated files #
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Local H2 database
+*.db

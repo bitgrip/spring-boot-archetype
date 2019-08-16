@@ -1,0 +1,8 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: myAuthor
+      changes:
+        - sqlFile:
+            path: sql/0.0.1_changelog.sql
+            relativeToChangelogFile: true

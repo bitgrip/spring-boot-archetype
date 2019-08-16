@@ -1,0 +1,69 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>de.bitgrip.archetype</groupId>
+  <artifactId>spring-boot-service</artifactId>
+  <packaging>maven-archetype</packaging>
+  <version>0.0.3-SNAPSHOT</version>
+  <name>Archetype - Spring-Boot-service</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <distributionManagement>
+    <snapshotRepository>
+      <id>bitgrip-snapshots</id>
+    </snapshotRepository>
+    <repository>
+      <id>bitgrip-snapshots</id>
+      <url>https://ci.bitgrip.berlin/nexus/repository/bitgrip-snapshots/</url>
+    </repository>
+  </distributionManagement>
+  <build>
+    <extensions>
+      <extension>
+        <groupId>org.apache.maven.archetype</groupId>
+        <artifactId>archetype-packaging</artifactId>
+        <version>3.0.1</version>
+      </extension>
+    </extensions>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-archetype-plugin</artifactId>
+        <version>3.0.1</version>
+      </plugin>
+      <plugin>
+        <groupId>org.ec4j.maven</groupId>
+        <artifactId>editorconfig-maven-plugin</artifactId>
+        <version>0.0.10</version>
+        <executions>
+          <execution>
+            <id>check</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <!-- See http://ec4j.github.io/editorconfig-maven-plugin/ for full configuration reference -->
+          <excludes>
+            <!-- Note that maven submodule directories and many non-source file patterns are excluded by default -->
+            <!-- - see https://github.com/ec4j/editorconfig-maven-plugin/blob/master/ec4j-lint-api/src/main/java/org/ec4j/maven/lint/api/Constants.java#L37 -->
+            <!-- You can exclude further files from processing: -->
+            <!-- <exclude>tmp-dir/**/*</exclude>-->
+          </excludes>
+          <!-- All files are included by default:
+          <includes>
+            <include>**</include>
+          </includes>
+          -->
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

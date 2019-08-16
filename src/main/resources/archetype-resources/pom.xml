@@ -1,0 +1,147 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>${groupId}</groupId>
+  <artifactId>${artifactId}</artifactId>
+  <version>${version}</version>
+  <packaging>pom</packaging>
+  <name>${artifactId}</name>
+  <url>http://www.your-project-url.com</url>
+
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.1.6.RELEASE</version>
+  </parent>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java.version>1.8</java.version>
+    <!-- Dependency versions -->
+    <org.mapstruct.version>1.2.0.Final</org.mapstruct.version>
+    <io.springfox.version>2.9.2</io.springfox.version>
+    <swagger.version>1.5.20</swagger.version>
+    <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
+  </properties>
+
+  <scm>
+    <connection>scm:git:INSERT_YOUR_GIT_URL_HERE</connection>
+    <developerConnection>scm:git:INSERT_YOUR_GIT_URL_HERE</developerConnection>
+    <url>INSERT_YOUR_GIT_URL_HERE</url>
+  </scm>
+
+  <repositories>
+
+  </repositories>
+
+  <distributionManagement>
+    <repository>
+    </repository>
+    <snapshotRepository>
+    </snapshotRepository>
+  </distributionManagement>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>${spring-cloud.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.mapstruct</groupId>
+        <artifactId>mapstruct</artifactId>
+        <version>${org.mapstruct.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.mapstruct</groupId>
+        <artifactId>mapstruct-processor</artifactId>
+        <version>${org.mapstruct.version}</version>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>io.springfox</groupId>
+        <artifactId>springfox-swagger2</artifactId>
+        <version>${io.springfox.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+      <dependency>
+        <groupId>io.swagger</groupId>
+        <artifactId>swagger-annotations</artifactId>
+        <version>${swagger.version}</version>
+        <scope>compile</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <modules>
+    <module>domain</module>
+    <module>service</module>
+    <module>api</module>
+    <module>controller</module>
+    <module>application</module>
+    <module>client</module>
+  </modules>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <configuration>
+            <source>${java.version}</source>
+            <target>${java.version}</target>
+            <annotationProcessorPaths>
+              <path>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct-processor</artifactId>
+                <version>${org.mapstruct.version}</version>
+              </path>
+            </annotationProcessorPaths>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.ec4j.maven</groupId>
+        <artifactId>editorconfig-maven-plugin</artifactId>
+        <version>0.0.10</version>
+        <executions>
+          <execution>
+            <id>check</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+					<!-- See http://ec4j.github.io/editorconfig-maven-plugin/ for full configuration reference -->
+          <excludes>
+						<!-- Note that maven submodule directories and many non-source file patterns are excluded by default -->
+						<!-- - see https://github.com/ec4j/editorconfig-maven-plugin/blob/master/ec4j-lint-api/src/main/java/org/ec4j/maven/lint/api/Constants.java#L37 -->
+						<!-- You can exclude further files from processing: -->
+            <!-- <exclude>tmp-dir/**/*</exclude>-->
+          </excludes>
+					<!-- All files are included by default:
+          <includes>
+            <include>**</include>
+          </includes>
+          -->
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
