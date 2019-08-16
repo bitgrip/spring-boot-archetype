@@ -8,7 +8,7 @@ It creates a typical spring-boot-service with Controller, Service and domain (da
 
 ```mvn archetype:generate -DarchetypeGroupId=de.bitgrip.archetypes -DarchetypeArtifactId=spring-boot-service -DarchetypeVersion=0.1.0```
 
-##Archetype Structure:
+## Archetype Structure:
 
 ```
 project
