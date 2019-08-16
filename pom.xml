@@ -142,7 +142,7 @@
           </executions>
           <configuration>
             <includes>
-              <include>de/bitgrip/ficum/**</include>
+              <include>de/bitgrip/archetypes/**</include>
             </includes>
           </configuration>
         </plugin>
