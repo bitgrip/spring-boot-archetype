@@ -5,7 +5,7 @@
   <groupId>de.bitgrip.archetypes</groupId>
   <artifactId>spring-boot-service</artifactId>
   <packaging>maven-archetype</packaging>
-  <version>0.0.3-SNAPSHOT</version>
+  <version>0.1.0-SNAPSHOT</version>
   <name>An archetype of a spring-boot-service</name>
   <description>An archetype which generates a complete spring-boot-service with an RESTFUL api with dummy implementation.
     Each application layer is
