@@ -13,7 +13,6 @@ It creates a typical spring-boot-service with Controller, Service and domain (da
 ```
 project
    |-- pom.xml
-   |-- .editorconfig
    |-- api #API definition of the service
    |   |-- pom.xml
    |   `-- src
