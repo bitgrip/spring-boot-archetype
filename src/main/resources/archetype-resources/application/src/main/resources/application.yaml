@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: application-name
+  datasource:
+    url: jdbc:h2:./target/test;DB_CLOSE_ON_EXIT=FALSE;
+  security:
+    user:
+      name: actuator
+      password: actuator
+my:
+  service:
+    myProperty: foo
+
+management:
+  endpoints:
+    web:
+      base-path: /admin
+  security:
+
+info:
+  build:
+    artifact: ${artifactId}
+    name: artifact-name
+    description: service-description
+    version: ${version}
