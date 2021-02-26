@@ -11,7 +11,7 @@ import ${package}.api.dto.response.HelloWorldResponseDTO;
 public interface TestMapper {
 
 
-	public HelloWorldResponseDTO toHelloWorldResponseDTO(Test test);
+	HelloWorldResponseDTO toHelloWorldResponseDTO(Test test);
 
-	public Test toTest(HelloWorldRequestDTO request);
+	Test toTest(HelloWorldRequestDTO request);
 }

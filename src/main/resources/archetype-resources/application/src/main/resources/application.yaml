@@ -23,3 +23,14 @@ info:
     name: artifact-name
     description: service-description
     version: ${version}
+
+swagger:
+  base-package: ${groupId}.controller
+  api-info:
+    title: great-api
+    description: My great API
+    version: ${version}
+    contact:
+      name: Marcel Müller
+      url: https://bitgrip.de
+      email: marcel.mueller@bitgrip.de

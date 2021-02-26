@@ -4,6 +4,6 @@ import ${package}.domain.Test;
 
 public interface TestService {
 
-	public Test helloBitgrip(Test test);
+	Test helloBitgrip(Test test);
 
 }

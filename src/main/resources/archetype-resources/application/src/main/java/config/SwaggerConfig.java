@@ -6,24 +6,19 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.Ordered;
 import org.springframework.data.domain.Pageable;
-import org.springframework.web.bind.annotation.RequestMethod;
 import springfox.documentation.builders.*;
 import springfox.documentation.schema.AlternateTypeRule;
 import springfox.documentation.schema.AlternateTypeRuleConvention;
 import springfox.documentation.schema.AlternateTypeRules;
-import springfox.documentation.schema.ModelRef;
 import springfox.documentation.service.ApiInfo;
-import springfox.documentation.service.Header;
-import springfox.documentation.service.ResponseMessage;
-import springfox.documentation.service.VendorExtension;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.lang.reflect.Type;
 import java.net.URI;
 import java.security.Principal;
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * <p>Central Swagger configuration using configurationProperties @see {@link SwaggerConfigurationProperties}</p>
@@ -36,8 +31,6 @@ import java.util.*;
 @EnableConfigurationProperties(SwaggerConfigurationProperties.class)
 public class SwaggerConfig {
 
-  public static final String SWAGGER_DEFAULT_PATH = "/v2/api-docs";
-
   private SwaggerConfigurationProperties swaggerConfigurationProperties;
 
   private TypeResolver typeResolver;
@@ -49,7 +42,7 @@ public class SwaggerConfig {
 
   @Bean
   public Docket productApi() {
-    return new Docket(DocumentationType.SWAGGER_2)
+    return new Docket(DocumentationType.OAS_30)
             .ignoredParameterTypes(Principal.class)
             .select()
             .apis(RequestHandlerSelectors.basePackage(swaggerConfigurationProperties.getBasePackage()))

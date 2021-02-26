@@ -20,6 +20,6 @@ public interface TestController {
             value = "create Message by HelloWorldRequestDTO"
     )
 	@PostMapping
-	public  HelloWorldResponseDTO helloBitgrip( @ApiParam(value = "HelloWorldRequestDTO") HelloWorldRequestDTO request);
+	HelloWorldResponseDTO helloBitgrip( @ApiParam(value = "HelloWorldRequestDTO") HelloWorldRequestDTO request);
 
 }
