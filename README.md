@@ -1,12 +1,12 @@
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=de.bitgrip.archetypes%3Aspring-boot-service&metric=alert_status)](https://sonarcloud.io/dashboard?id=de.bitgrip.archetypes%3Aspring-boot-service) [![Build Status](https://travis-ci.org/bitgrip/spring-boot-archetype.svg?branch=master)](https://travis-ci.org/bitgrip/spring-boot-archetype) [![Maven Central](https://img.shields.io/maven-central/v/de.bitgrip.archetypes/spring-boot-service.svg)](http://search.maven.org/#search%7Cga%7C1%7Cde.bitgrip.archetypes)
 # spring-boot-archetype
-Archetype for generating a spring-boot service based on Spring Boot 2.1.6
+Archetype for generating a spring-boot service based on Spring Boot 2.4.2
 
 It creates a typical spring-boot-service with Controller, Service and domain (data) layer. Additionally, it creates a FeignClient for access to this service based on API description.
 
 ## Usage
 
-```mvn archetype:generate -DarchetypeGroupId=de.bitgrip.archetypes -DarchetypeArtifactId=spring-boot-service -DarchetypeVersion=0.1.0```
+```mvn archetype:generate -DarchetypeGroupId=de.bitgrip.archetypes -DarchetypeArtifactId=spring-boot-service -DarchetypeVersion=0.2.0```
 
 ## Archetype Structure:
 
